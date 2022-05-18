@@ -1,0 +1,65 @@
+app-sidebar {
+  grid-area: sidebar;
+}
+
+.content {
+  grid-area: content;
+}
+
+app-account {
+  grid-area: content;
+}
+
+app-header {
+  grid-area: header;
+}
+
+app-friends {
+  grid-area: friends;
+}
+
+app-music {
+  grid-area: music;
+}
+
+.wrapper {
+  height: 100%;
+  display: grid;
+  grid-template-columns: 1fr 4fr 2fr;
+  grid-template-areas:
+    "sidebar header friends"
+    "sidebar content friends"
+    "sidebar content friends"
+    "sidebar content friends"
+    "sidebar content music"
+    "sidebar content music"
+    "sidebar content music"
+    "sidebar content music"
+    "sidebar content music"
+    "sidebar  content  music";
+  background-color: #fff;
+  color: #444;
+}
+
+@media screen and (max-width: 600px) {
+
+  app-friends {
+    display: none;
+  }
+
+  .wrapper {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+    "sidebar"
+    "header"
+    "content"
+    "content"
+    "content"
+    "content"
+    "content"
+    "content"
+    "content"
+    "content"
+    "music";
+  }
+}
